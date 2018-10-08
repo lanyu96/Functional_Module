@@ -26,28 +26,33 @@ public class Calc {
 	 * 功能:计算
 	 */
 	private static void Calculation(String s) {
-		if (s.contains("*")) { // 乘法运算
-			String[] sp = s.split("\\*");
-			int number = Integer.parseInt(sp[0]) * Integer.parseInt(sp[1]);
-			System.out.println(sp[0]+"*"+sp[1]+"="+number);
-		} else if (s.contains("/")) {// 除法运算
-			String[] sp = s.split("\\/");
-			int number = Integer.parseInt(sp[0]) / Integer.parseInt(sp[1]);
-			System.out.println(sp[0]+"/"+sp[1]+"="+number);
-		} else if (s.contains("+")) {// 加法运算
-			String[] sp = s.split("\\+");
-			int number = Integer.parseInt(sp[0]) + Integer.parseInt(sp[1]);
-			System.out.println(sp[0]+"+"+sp[1]+"="+number);
-		} else if (s.contains("-")) {// 减法运算
-			String[] sp = s.split("\\-");
-			int number = Integer.parseInt(sp[0]) - Integer.parseInt(sp[1]);
-			System.out.println(sp[0]+"-"+sp[1]+"="+number);
-		} else if (s.contains("%")) {// 取余运算
-			String[] sp = s.split("\\%");
-			int number = Integer.parseInt(sp[0]) % Integer.parseInt(sp[1]);
-			System.out.println(sp[0]+"%"+sp[1]+"="+number);
-		}else {
-			System.out.println("请输入正确的数值!");
+		try {
+			if (s.contains("*")) { // 乘法运算
+				String[] sp = s.split("\\*");
+				int number = Integer.parseInt(sp[0]) * Integer.parseInt(sp[1]);
+				System.out.println(sp[0]+"*"+sp[1]+"="+number);
+			} else if (s.contains("/")) {// 除法运算
+				String[] sp = s.split("\\/");
+				int number = Integer.parseInt(sp[0]) / Integer.parseInt(sp[1]);
+				System.out.println(sp[0]+"/"+sp[1]+"="+number);
+			} else if (s.contains("+")) {// 加法运算
+				String[] sp = s.split("\\+");
+				int number = Integer.parseInt(sp[0]) + Integer.parseInt(sp[1]);
+				System.out.println(sp[0]+"+"+sp[1]+"="+number);
+			} else if (s.contains("-")) {// 减法运算
+				String[] sp = s.split("\\-");
+				int number = Integer.parseInt(sp[0]) - Integer.parseInt(sp[1]);
+				System.out.println(sp[0]+"-"+sp[1]+"="+number);
+			} else if (s.contains("%")) {// 取余运算
+				String[] sp = s.split("\\%");
+				int number = Integer.parseInt(sp[0]) % Integer.parseInt(sp[1]);
+				System.out.println(sp[0]+"%"+sp[1]+"="+number);
+			}else {
+				System.out.println("请输入正确的数值!");
+			}
+		} catch (NumberFormatException e) {
+			// TODO Auto-generated catch block
+			System.out.println("输入了非法字符,请重新输入");
 		}
 	}
 
